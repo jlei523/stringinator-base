@@ -1,29 +1,29 @@
 const _ = require('./underbar');
 
 const first = function(str, n) {
-  // Your code goes here
+  return _.first(str, n);
 };
 
 const last = function(str, n) {
-  // Your code goes here
+  return _.last(str, n);
 };
 
 const removeChar = function(str, target) {
-  // hint: use _.reject
-  // Your code goes here
+  return _.reject(str.split(''), item => item === target).join('');
 };
 
 const hasChar = function(str, target) {
+  return _.some(str.split(''), item => item === target);
   // hint: use _.some
   // Your code goes here
 };
 
 const isOnlyDigits = function(str) {
-  // Your code goes here
+  return _.every(str.split(''), item => !isNaN(Number(item)));
 };
 
 const filterToOnlyDigits = function(str) {
-  // Your code goes here
+  return _.reject(str, item => isNaN(parseFloat(item))).join('');
 };
 
 const truncateString = function(val, maxLength) {
@@ -32,16 +32,17 @@ const truncateString = function(val, maxLength) {
 };
 
 const truncateLongItems = function(obj, maxLength) {
-  // hint: use truncateString above
-  // Your code goes here
+  return _.map(obj, value => truncateString(value, maxLength));
 };
 
 const countChars = function(str) {
-  // Your code goes here
+  let obj = {};
+  _.each(_.uniq(str), item => obj[item] = str.split(item).length-1);
+  return obj;
 };
 
 const dedup = function(str) {
-  // Your code goes here
+  return _.uniq(str).join('');
 };
 
 module.exports = {
