@@ -14,8 +14,6 @@ const removeChar = function(str, target) {
 
 const hasChar = function(str, target) {
   return _.some(str.split(''), item => item === target);
-  // hint: use _.some
-  // Your code goes here
 };
 
 const isOnlyDigits = function(str) {
@@ -27,7 +25,6 @@ const filterToOnlyDigits = function(str) {
 };
 
 const truncateString = function(val, maxLength) {
-  // A freebie solution, this is the ONLY method here that doesn't use Underbar.
   return String(val).slice(0, maxLength);
 };
 
